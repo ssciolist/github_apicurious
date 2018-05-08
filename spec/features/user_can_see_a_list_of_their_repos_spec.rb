@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe 'user visits their homepage and clicks repositories link' do
-  skip 'they can see a list of their repositories' do
+  it 'they can see a list of their repositories' do
     visit root_path
 
     click_on "Repositories"
