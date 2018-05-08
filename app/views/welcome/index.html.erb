@@ -16,7 +16,7 @@
     </div>
     <% if params[:tab] == "repositories" %>
       <ul>
-        <%= @repositories.each do |repository| %>
+        <% @repositories.each do |repository| %>
         <li>
           <%= link_to repository.name, repository.url %><br>
           <%= repository.description %><br>
