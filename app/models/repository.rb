@@ -1,6 +1,9 @@
 class Repository
   attr_reader :all
+  def initialize(attrs)
+
+  end
   def self.all
-    [1, 3, 4, 5]
+    binding.pry
   end
 end
