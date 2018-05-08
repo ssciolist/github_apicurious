@@ -1,3 +1,4 @@
+<<<<<<< Updated upstream
 <%= stylesheet_link_tag "main" %>
 <main>
   <aside class="user-sidebar">
@@ -16,3 +17,12 @@
     </div>
   </section>
 </main>
+=======
+
+<%  if current_user %>
+  Hello, <%= current_user.screen_name %>
+  <%= link_to "Logout", logout_path, method: :delete %>
+<% else %>
+  <%= link_to "Login", github_login_path %>
+<% end %>
+>>>>>>> Stashed changes
