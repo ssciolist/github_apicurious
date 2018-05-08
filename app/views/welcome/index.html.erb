@@ -1,7 +1,18 @@
 
-<%  if current_user %>
-  Hello, <%= current_user.screen_name %>
-  <%= link_to "Logout", logout_path, method: :delete %>
-<% else %>
-  <%= link_to "Login", github_login_path %>%>
-<% end %>
+<main>
+  <aside class="user-sidebar">
+    <img class="profile-pic" src="" alt="">
+    <h3>User full name</h3>
+    <h4>Username</h4>
+    <p>Bio</p>
+  </aside>
+  <section>
+    <div class="User-bar">
+      <a href="#">Overview</a>
+      <a href="#">Repositories</a>
+      <a href="#">Stars</a>
+      <a href="#">Followers</a>
+      <a href="#">Following</a>
+    </div>
+  </section>
+</main>
