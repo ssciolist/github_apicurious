@@ -1,5 +1,5 @@
 class Follower
-  attr_reader :all, :name, :url, :description, :language, :description, :language, :last_updated
+  attr_reader :all, :screen_name, :profile_pic, :url
   def initialize(attrs)
 
     @screen_name = attrs[:name]
