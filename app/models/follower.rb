@@ -1,7 +1,7 @@
 class Follower
   attr_reader :all, :name, :url, :description, :language, :description, :language, :last_updated
   def initialize(attrs)
-    binding.pry
+
     @screen_name = attrs[:name]
     @profile_pic = attrs[:avatar_url]
     @url = attrs[:html_url]
