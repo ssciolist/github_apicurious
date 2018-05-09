@@ -64,8 +64,8 @@ def stub_omniauth
       nickname: 'ssciolist'
     },
     credentials: {
-      token: 'pizza',
-      secret: 'secretpizza'
+      token: ENV['GITHUB_AUTHORIZATION_TOKEN'],
+      secret: ENV['GITHUB_SECRET']
     }
     })
 end
