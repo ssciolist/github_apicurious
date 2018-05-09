@@ -39,9 +39,9 @@
       <ul>
         <% @following.each do |followed_user| %>
         <li class="followed_user">
-          <img src="<%= followed_user.profile-pic %>" alt="profile-pic">
+          <img src="<%= followed_user.profile_pic %>" alt="profile-pic">
           <%= link_to followed_user.screen_name, followed_user.url, class: 'user_screen_name' %><br>
-          <%= link_to followed_user.full_name, followed_user.url, class: 'user_full_name' %><br>
+
         </li>
       <% end %>
       </ul>

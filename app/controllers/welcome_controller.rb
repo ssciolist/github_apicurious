@@ -8,7 +8,7 @@ class WelcomeController < ApplicationController
       @followers = Follower.all
     elsif params[:tab] == "following"
       FollowingCall.new(current_user).following
-      @following = FollowedUsers.all
+      @following = FollowedUser.all
     end
   end
 
