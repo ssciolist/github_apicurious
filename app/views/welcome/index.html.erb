@@ -25,5 +25,15 @@
         <% end %>
       </ul>
     <% end %>
+    <% if params[:tab] == "followers" %>
+      <ul>
+        <% @followers.each do |follower| %>
+        <li>
+          <img src="<%= follower.profile_pic %>" alt="">
+          <%= link_to follower.screen_name, follower.url %><br>
+        </li>
+        <% end %>
+      </ul>
+    <% end %>
   </section>
 </main>

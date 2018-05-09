@@ -4,6 +4,10 @@ class WelcomeController < ApplicationController
       call = RepositoryCall.new(current_user)
       call.repositories
       @repositories = Repository.all
+    else params[:tab] == "followers"
+      call = FollowerCall.new(current_user)
+      call.followers
+      @followers = Follower.all
     end
   end
 
