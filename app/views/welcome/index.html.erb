@@ -9,10 +9,21 @@
   <section>
     <div class="User-bar">
       <a href="#">Overview</a>
-      <a href="#">Repositories</a>
+      <a href="/?tab=repositories">Repositories</a>
       <a href="#">Stars</a>
       <a href="#">Followers</a>
       <a href="#">Following</a>
     </div>
+    <% if params[:tab] == "repositories" %>
+      <ul>
+        <% @repositories.each do |repository| %>
+        <li>
+          <%= link_to repository.name, repository.url %><br>
+          <%= repository.description %><br>
+          <%= repository.language %>&nbsp;&nbsp;<%= repository.last_updated %>
+        </li>
+        <% end %>
+      </ul>
+    <% end %>
   </section>
 </main>

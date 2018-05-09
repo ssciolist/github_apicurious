@@ -1,14 +1,3 @@
-class WelcomeController < ApplicationController
-  def index
-    if params[:tab] == "repositories"
-      call = RepositoryCall.new(current_user)
-      call.repositories
-      @repositories = Repository.all
-    end
-  end
-
-end
-
 class RepositoryCall
   def initialize(current_user)
     @current_user = current_user
