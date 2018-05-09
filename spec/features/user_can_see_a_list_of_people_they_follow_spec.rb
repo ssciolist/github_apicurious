@@ -10,6 +10,11 @@ describe 'User visits their homepage and clicks following link' do
     click_on "Following"
 
     expect(current_url).to include('tab=following')
-    expect(page).to have_content('python-data-wrangling')
+    expect(page).to have_css(".followed_user", count: 4)
+    expect(page).to have_content('ryanpitts')
+    within(first('.followed_user')) do
+      expect(page).to have_css('.user_full_name')
+      expect(page).to have_css('.user_screen_name')
+    end
   end
 end
