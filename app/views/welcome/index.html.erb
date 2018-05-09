@@ -10,9 +10,9 @@
     <div class="User-bar">
       <a href="#">Overview</a>
       <a href="/?tab=repositories">Repositories</a>
-      <a href="#">Stars</a>
-      <a href="#">Followers</a>
-      <a href="#">Following</a>
+      <a href="/?tab=stars">Stars</a>
+      <a href="/?tab=followers">Followers</a>
+      <a href="/?tab=following">Following</a>
     </div>
     <% if params[:tab] == "repositories" %>
       <ul>
@@ -21,6 +21,16 @@
           <%= link_to repository.name, repository.url %><br>
           <%= repository.description %><br>
           <%= repository.language %>&nbsp;&nbsp;<%= repository.last_updated %>
+        </li>
+        <% end %>
+      </ul>
+    <% end %>
+    <% if params[:tab] == "followers" %>
+      <ul>
+        <% @followers.each do |follower| %>
+        <li>
+          <img src="<%= follower.profile_pic %>" alt="">
+          <%= link_to follower.screen_name, follower.url %><br>
         </li>
         <% end %>
       </ul>
