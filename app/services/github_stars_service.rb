@@ -4,7 +4,7 @@ class GithubStarsService
   end
 
   def starred_repos
-    JSON.parse(raw_search, symbolize_names: true)
+    JSON.parse(raw_search.body, symbolize_names: true)
   end
 
   private
