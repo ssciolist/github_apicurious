@@ -29,5 +29,11 @@ describe Repository do
       expect(subject.forks).to eq('true')
       expect(subject.creator).to eq('ssciolist')
     end
+
+    it 'can be starred' do
+      starred_repo = Repository.new(attributes, true)
+
+      expect(starred_repo.starred).to eq(true)
+    end
   end
 end
