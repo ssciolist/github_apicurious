@@ -12,8 +12,10 @@ describe FollowingCall do
   context 'instance methods' do
     context 'repositories' do
       it 'returns a collection of repositories' do
-        expect(subject.following.count).to eq(5)
-        expect(subject.following.first).to be_a FollowedUser
+        VCR.use_cassette('services/following_call_get_following') do
+          expect(subject.following.count).to eq(5)
+          expect(subject.following.first).to be_a FollowedUser
+        end
       end
     end
   end

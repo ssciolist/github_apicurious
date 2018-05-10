@@ -12,8 +12,10 @@ describe RepositoryCall do
   context 'instance methods' do
     context 'repositories' do
       it 'returns a collection of repositories' do
-        expect(subject.repositories.count).to eq(30)
-        expect(subject.repositories.first).to be_a Repository
+        VCR.use_cassette('services/repocall_get_repos') do
+          expect(subject.repositories.count).to eq(30)
+          expect(subject.repositories.first).to be_a Repository
+        end
       end
     end
   end
