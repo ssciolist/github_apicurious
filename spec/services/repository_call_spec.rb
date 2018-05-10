@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 describe RepositoryCall do
-  let(:user) {user = User.create(screen_name: "me", oauth_token: ENV['GITHUB_AUTHORIZATION_TOKEN'])}
+  let(:user) {user = User.create(screen_name: "ssciolist", oauth_token: ENV['GITHUB_AUTHORIZATION_TOKEN'])}
   subject { RepositoryCall.new(user)}
   context 'initialize' do
     it 'exists with a valid user' do
