@@ -1,0 +1,10 @@
+<% @forked_repositories.each do |repository| %>
+<li class = "starred_repo">
+  <%= link_to "#{repository.creator}/ #{repository.name}", repository.url, { class: 'repo_link'} %><br>
+  <span class="repo_description"><%= repository.description %><br></span>
+  <span class="repo_language"><%= repository.language %>&nbsp;&nbsp;</span>
+  <%= link_to repository.stars, repository.stars_url, { class: 'repo_stars'} %>&nbsp;&nbsp;
+  <% if repository.forks > 0 %><%= link_to repository.forks, "/#{repository.name}/forks?creator=#{repository.creator}", { class: 'repo_forks'} %>&nbsp;&nbsp;<% end %>
+  <span class="repo_updated_at"><%= repository.last_updated %></span>
+</li>
+<% end %>

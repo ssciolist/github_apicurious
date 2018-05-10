@@ -13,6 +13,7 @@ describe 'User visits their homepage and clicks stars' do
       expect(current_url).to include('tab=stars')
 
       expect(page).to have_css(".starred_repo", count: 5)
+
       expect(page).to have_content('Resources for teaching Python for Data Wrangling at NICAR 2016.')
       within(first('.starred_repo')) do
         expect(page).to have_css('.repo_link')

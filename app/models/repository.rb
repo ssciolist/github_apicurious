@@ -1,8 +1,8 @@
 class Repository
   attr_reader :all, :name, :url, :description, :description,
-              :language, :last_updated, :stars, :stars_url, :forks, :starred, :creator
+              :language, :last_updated, :stars, :stars_url, :forks, :starred, :creator, :forked
 
-  def initialize(attrs, starred = false)
+  def initialize(attrs, starred = false, forked = false)
     @name = attrs[:name]
     @url = attrs[:html_url]
     @description = attrs[:description]
@@ -13,6 +13,7 @@ class Repository
     @forks = attrs[:forks_count]
     @starred = starred
     @creator = attrs[:owner][:login]
+    @forked = forked
   end
 
 
@@ -22,5 +23,13 @@ class Repository
 
   def self.starred
     ObjectSpace.each_object(self).to_a.find_all{ |x| x.starred == true}
+  end
+
+  def self.forked
+    ObjectSpace.each_object(self).to_a.find_all{ |x| x.forked == true}
+  end
+
+  def self.find_by_name(name)
+    ObjectSpace.each_object(self).to_a.find_all{ |x| x.name == name}
   end
 end
