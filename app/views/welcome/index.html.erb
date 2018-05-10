@@ -49,7 +49,7 @@
       <ul>
         <% @starred_repos.each do |repository| %>
         <li>
-          <%= link_to "#{repository.creator} / #{repository.name}", repository.url { class: 'repo_link'} %><br>
+          <%= link_to "#{repository.creator} / #{repository.name}", repository.url, { class: 'repo_link'} %><br>
           <span class="repo_description"><%= repository.description %><br></span>
           <span class="repo_language"><%= repository.language %>&nbsp;&nbsp;</span>
           <span class="repo_stars"><%= repository.stars %>&nbsp;&nbsp;</span>

@@ -9,6 +9,9 @@ class WelcomeController < ApplicationController
     elsif params[:tab] == "following"
       FollowingCall.new(current_user).following
       @following = FollowedUser.all
+    elsif params[:tab] == "stars"
+      StarsCall.new(current_user).stars
+      @starred_repos = StarredRepository.all
     end
   end
 
