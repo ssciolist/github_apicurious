@@ -13,18 +13,20 @@ describe GithubFollowerService do
   context 'instance methods' do
     context '#followers' do
       it 'returns array of follower hashes' do
-        followers = subject.followers
-        follower = subject.followers.first
+        VCR.use_cassette('services/github_get_followers') do
+          followers = subject.followers
+          follower = subject.followers.first
 
-        expect(followers).to be_an Array
-        expect(followers.count).to eq(2)
+          expect(followers).to be_an Array
+          expect(followers.count).to eq(2)
 
-        expect(follower).to have_key(:login)
-        expect(follower[:login]).to be_a String
-        expect(follower).to have_key(:avatar_url)
-        expect(follower[:avatar_url]).to be_a String
-        expect(follower).to have_key(:html_url)
-        expect(follower[:html_url]).to be_a String
+          expect(follower).to have_key(:login)
+          expect(follower[:login]).to be_a String
+          expect(follower).to have_key(:avatar_url)
+          expect(follower[:avatar_url]).to be_a String
+          expect(follower).to have_key(:html_url)
+          expect(follower[:html_url]).to be_a String
+        end
       end
     end
   end

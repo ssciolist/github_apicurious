@@ -12,15 +12,17 @@ describe GithubFollowingService do
 
   context 'instance methods' do
     it '#following' do
-      followed_users = subject.following
-      followed_user = subject.following.first
+      VCR.use_cassette('services/github_get_following') do
+        followed_users = subject.following
+        followed_user = subject.following.first
 
-      expect(followed_user).to have_key(:login)
-      expect(followed_user[:login]).to be_a String
-      expect(followed_user).to have_key(:avatar_url)
-      expect(followed_user[:avatar_url]).to be_a String
-      expect(followed_user).to have_key(:html_url)
-      expect(followed_user[:html_url]).to be_a String
+        expect(followed_user).to have_key(:login)
+        expect(followed_user[:login]).to be_a String
+        expect(followed_user).to have_key(:avatar_url)
+        expect(followed_user[:avatar_url]).to be_a String
+        expect(followed_user).to have_key(:html_url)
+        expect(followed_user[:html_url]).to be_a String
+      end
     end
   end
 end
