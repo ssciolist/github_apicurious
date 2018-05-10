@@ -21,13 +21,22 @@ describe GithubStarsService do
           expect(starred_repos.count).to eq(5)
 
           expect(starred_repo).to have_key(:owner)
+          expect(starred_repo[:owner]).to have_key(:login)
+          expect(starred_repo[:owner][:login]).to be_a String
           expect(starred_repo).to have_key(:name)
+          expect(starred_repo[:name]).to be_a String
           expect(starred_repo).to have_key(:description)
+          expect(starred_repo[:description]).to be_a String
           expect(starred_repo).to have_key(:language)
+          expect(starred_repo[:language]).to be_a String
           expect(starred_repo).to have_key(:updated_at)
+          expect(starred_repo[:updated_at]).to be_a String
           expect(starred_repo).to have_key(:stargazers_count)
+          expect(starred_repo[:stargazers_count]).to be_a String
           expect(starred_repo).to have_key(:stargazers_url)
+          expect(starred_repo[:stargazers_url]).to be_a String
           expect(starred_repo).to have_key(:forks_count)
+          expect(starred_repo[:forks_count]).to be_a String
         end
       end
     end

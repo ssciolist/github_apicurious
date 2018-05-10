@@ -1,5 +1,5 @@
 class Repository
-  attr_reader :all, :name, :url, :description, :language, :description,
+  attr_reader :all, :name, :url, :description, :description,
               :language, :last_updated, :stars, :stars_url, :forks, :starred, :creator
 
   def initialize(attrs, starred = false)
@@ -14,6 +14,7 @@ class Repository
     @starred = starred
     @creator = attrs[:owner][:login]
   end
+
 
   def self.all
     ObjectSpace.each_object(self).to_a

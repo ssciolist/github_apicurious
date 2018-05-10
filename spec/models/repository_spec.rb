@@ -9,7 +9,7 @@ describe Repository do
      updated_at: "#{Date.today}",
      stargazers_count: 3,
      stargazers_url: 'example.com',
-     fork: 'true',
+     forks_count: 5,
      owner: {
        login: 'ssciolist'
      }
@@ -26,7 +26,7 @@ describe Repository do
       expect(subject.last_updated).to eq("#{Date.today}")
       expect(subject.stars).to eq(3)
       expect(subject.stars_url).to eq("example.com")
-      expect(subject.forks).to eq('true')
+      expect(subject.forks).to eq(5)
       expect(subject.creator).to eq('ssciolist')
     end
 
