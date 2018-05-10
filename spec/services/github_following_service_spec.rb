@@ -11,12 +11,16 @@ describe GithubFollowingService do
   end
 
   context 'instance methods' do
-    skip '#following' do
+    it '#following' do
       followed_users = subject.following
       followed_user = subject.following.first
 
-      expect(follower).to have_key(:login)
-      expect(follower[:login]).to be_a String
+      expect(followed_user).to have_key(:login)
+      expect(followed_user[:login]).to be_a String
+      expect(followed_user).to have_key(:avatar_url)
+      expect(followed_user[:avatar_url]).to be_a String
+      expect(followed_user).to have_key(:html_url)
+      expect(followed_user[:html_url]).to be_a String
     end
   end
 end

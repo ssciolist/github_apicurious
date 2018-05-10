@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe FollowedUser do
   let(:attributes) {
-    {name: "ssciolist",
+    {login: "ssciolist",
      avatar_url: "example.com",
      html_url: "example.com"}
   }
