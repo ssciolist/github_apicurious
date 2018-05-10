@@ -19,12 +19,12 @@ describe GithubFollowerService do
         expect(followers).to be_an Array
         expect(followers.count).to eq(1)
 
-        expect(follower).to have_key(:screen_name)
-        expect(follower[:screen_name]).to be_a String
-        expect(follower).to have_key(:profile_pic)
-        expect(follower[:profile_pic]).to be_a String
-        expect(follower).to have_key(:url)
-        expect(follower[:url]).to be_a String
+        expect(follower).to have_key(:login)
+        expect(follower[:login]).to be_a String
+        expect(follower).to have_key(:avatar_url)
+        expect(follower[:avatar_url]).to be_a String
+        expect(follower).to have_key(:html_url)
+        expect(follower[:html_url]).to be_a String
       end
     end
   end
