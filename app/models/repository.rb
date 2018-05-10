@@ -10,10 +10,11 @@ class Repository
     @last_updated = attrs[:updated_at]
     @stars = attrs[:stargazers_count]
     @stars_url = attrs[:stargazers_url]
-    @forks = attrs[:fork]
+    @forks = attrs[:forks_count]
     @starred = starred
     @creator = attrs[:owner][:login]
   end
+
   def self.all
     ObjectSpace.each_object(self).to_a
   end

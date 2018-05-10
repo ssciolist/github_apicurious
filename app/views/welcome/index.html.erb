@@ -53,7 +53,7 @@
           <span class="repo_description"><%= repository.description %><br></span>
           <span class="repo_language"><%= repository.language %>&nbsp;&nbsp;</span>
           <%= link_to repository.stars, repository.stars_url, { class: 'repo_stars'} %>&nbsp;&nbsp;
-          <span class="repo_forks"><%= repository.forks %>&nbsp;&nbsp;</span>
+          <% if repository.forks > 0 %><span class="repo_forks"><%= repository.forks %>&nbsp;&nbsp;</span><% end %>
           <span class="repo_updated_at"><%= repository.last_updated %></span>
         </li>
       <% end %>
