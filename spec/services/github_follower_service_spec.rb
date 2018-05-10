@@ -17,7 +17,7 @@ describe GithubFollowerService do
         follower = subject.followers.first
 
         expect(followers).to be_an Array
-        expect(followers.count).to eq(1)
+        expect(followers.count).to eq(2)
 
         expect(follower).to have_key(:login)
         expect(follower[:login]).to be_a String

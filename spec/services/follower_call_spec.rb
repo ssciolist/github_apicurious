@@ -12,7 +12,7 @@ describe FollowerCall do
   context 'instance methods' do
     context 'repositories' do
       it 'returns a collection of repositories' do
-        expect(subject.followers.count).to eq(1)
+        expect(subject.followers.count).to eq(2)
         expect(subject.followers.first).to be_a Follower
       end
     end
