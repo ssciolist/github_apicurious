@@ -1,5 +1,7 @@
 class Repository
-  attr_reader :all, :name, :url, :description, :language, :description, :language, :last_updated, :stars, :stars_url, :forks, :starred
+  attr_reader :all, :name, :url, :description, :language, :description,
+              :language, :last_updated, :stars, :stars_url, :forks, :starred, :creator
+
   def initialize(attrs, starred = false)
     @name = attrs[:name]
     @url = attrs[:html_url]
@@ -10,6 +12,7 @@ class Repository
     @stars_url = attrs[:stargazers_url]
     @forks = attrs[:fork]
     @starred = starred
+    @creator = attrs[:owner][:login]
   end
   def self.all
     ObjectSpace.each_object(self).to_a
