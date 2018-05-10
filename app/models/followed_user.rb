@@ -1,5 +1,6 @@
-class Follower
+class FollowedUser
   attr_reader :all, :screen_name, :profile_pic, :url
+
   def initialize(attrs)
     @screen_name = attrs[:login]
     @profile_pic = attrs[:avatar_url]

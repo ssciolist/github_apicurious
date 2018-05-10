@@ -1,19 +1,19 @@
 require 'rails_helper'
 
-describe RepositoryCall do
+describe FollowerCall do
   let(:user) {user = User.create(screen_name: "ssciolist", oauth_token: ENV['GITHUB_AUTHORIZATION_TOKEN'])}
-  subject { RepositoryCall.new(user)}
+  subject { FollowerCall.new(user)}
   context 'initialize' do
     it 'exists with a valid user' do
-      expect(subject).to be_a(RepositoryCall)
+      expect(subject).to be_a(FollowerCall)
     end
   end
 
   context 'instance methods' do
     context 'repositories' do
       it 'returns a collection of repositories' do
-        expect(subject.repositories.count).to eq(30)
-        expect(subject.repositories.first).to be_a Repository
+        expect(subject.followers.count).to eq(2)
+        expect(subject.followers.first).to be_a Follower
       end
     end
   end
